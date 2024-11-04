@@ -17,6 +17,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 /* Main Content Styles */
@@ -134,5 +135,10 @@ button:hover {
 
     .info-box, .progress-box, .certificate-box {
         padding: 5px 0; /* Less padding for mobile boxes */
+    }
+
+    button {
+        padding: 10px; /* Consistent button padding on small screens */
+        font-size: 14px; /* Adjust button font size for mobile */
     }
 }

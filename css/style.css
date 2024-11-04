@@ -91,6 +91,7 @@ button:hover {
 @media (max-width: 480px) {
     .login-container {
         padding: 15px; /* Less padding on small screens */
+        max-width: 90%; /* Allow the container to use more screen width */
     }
     
     .login-box h2 {
@@ -103,5 +104,17 @@ button:hover {
     
     .input-group input {
         padding: 8px; /* Less padding on small screens */
+    }
+}
+
+/* Additional Media Queries for Larger Screens */
+@media (min-width: 481px) and (max-width: 768px) {
+    .login-container {
+        padding: 20px; /* Adjust padding for medium screens */
+        max-width: 80%; /* Set max-width to 80% for medium screens */
+    }
+
+    .login-box h2 {
+        font-size: 22px; /* Slightly larger heading for medium screens */
     }
 }
