@@ -1,0 +1,107 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login Container */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect on login container */
+.login-container:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading Styles */
+.login-box h2 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 24px; /* Increased font size */
+}
+
+/* Paragraph Styles */
+.login-box p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 14px; /* Consistent font size */
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 15px;
+}
+
+/* Label Styles */
+.input-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Input Field Styles */
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+/* Input Field Focus */
+.input-group input:focus {
+    border-color: #6366f1; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Increased font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #4f46e5;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 15px; /* Less padding on small screens */
+    }
+    
+    .login-box h2 {
+        font-size: 20px; /* Smaller heading */
+    }
+    
+    button {
+        font-size: 14px; /* Smaller button text */
+    }
+    
+    .input-group input {
+        padding: 8px; /* Less padding on small screens */
+    }
+}

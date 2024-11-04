@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>EduPortal</h1>
+            <p id="user-role">Welcome, <span id="user-name"></span> (<span id="user-role-name"></span>)</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Student Information Section -->
+        <section>
+            <h2>Student Information</h2>
+            <div class="info-box">
+                <label><strong>Roll Number:</strong>
+                    <input type="text" id="roll-number" class="editable-field" readonly value="A123456">
+                </label>
+                <button class="edit-button" style="display: none;">Edit</button>
+                
+                <label><strong>Name:</strong>
+                    <input type="text" id="student-name" class="editable-field" readonly value="John Doe">
+                </label>
+                <button class="edit-button" style="display: none;">Edit</button>
+                
+                <label><strong>Division:</strong>
+                    <input type="text" id="division" class="editable-field" readonly value="A">
+                </label>
+                <button class="edit-button" style="display: none;">Edit</button>
+                
+                <label><strong>Mobile Number:</strong>
+                    <input type="text" id="mobile-number" class="editable-field" readonly value="+1234567890">
+                </label>
+                <button class="edit-button" style="display: none;">Edit</button>
+            </div>
+        </section>
+
+        <!-- Academic Progress Section -->
+        <section>
+            <h2>Academic Progress</h2>
+            <div class="progress-box">
+                <label><strong>Mathematics:</strong></label>
+                <div class="progress-bar"><span style="width: 80%;"></span></div>
+                <button class="edit-button" style="display: none;">Edit</button>
+            </div>
+            <div class="progress-box">
+                <label><strong>Physics:</strong></label>
+                <div class="progress-bar"><span style="width: 85%;"></span></div>
+                <button class="edit-button" style="display: none;">Edit</button>
+            </div>
+            <div class="progress-box">
+                <label><strong>Computer Science:</strong></label>
+                <div class="progress-bar"><span style="width: 90%;"></span></div>
+                <button class="edit-button" style="display: none;">Edit</button>
+            </div>
+        </section>
+
+        <!-- Exam Results Section -->
+        <section>
+            <h2>Exam Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Grade</th>
+                        <th>Score</th>
+                        <th>Percentage</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mathematics</td>
+                        <td><input type="text" value="A" class="editable-field" readonly></td>
+                        <td><input type="text" value="92/100" class="editable-field" readonly></td>
+                        <td><input type="text" value="92%" class="editable-field" readonly></td>
+                        <td><button class="result-edit-button" style="display: none;">Edit</button></td>
+                    </tr>
+                    <tr>
+                        <td>Physics</td>
+                        <td><input type="text" value="B" class="editable-field" readonly></td>
+                        <td><input type="text" value="82/100" class="editable-field" readonly></td>
+                        <td><input type="text" value="82%" class="editable-field" readonly></td>
+                        <td><button class="result-edit-button" style="display: none;">Edit</button></td>
+                    </tr>
+                    <tr>
+                        <td>Computer Science</td>
+                        <td><input type="text" value="A" class="editable-field" readonly></td>
+                        <td><input type="text" value="95/100" class="editable-field" readonly></td>
+                        <td><input type="text" value="95%" class="editable-field" readonly></td>
+                        <td><button class="result-edit-button" style="display: none;">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Certificates Section -->
+        <section>
+            <h2>Certificates</h2>
+            <div class="certificate-box">
+                <p>Academic Excellence</p>
+                <button>Download</button>
+            </div>
+            <div class="certificate-box">
+                <p>Science Fair Winner</p>
+                <button>Download</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
