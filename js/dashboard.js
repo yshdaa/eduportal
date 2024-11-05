@@ -106,3 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Data saved successfully!');
     }
 });
+function logout() {
+    // Redirect to index.html
+    window.location.href = 'index.html';
+}
