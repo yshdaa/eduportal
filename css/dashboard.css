@@ -18,7 +18,7 @@ header {
 }
 
 .header-container {
-    display:inline-flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
@@ -73,6 +73,56 @@ h2 {
     font-size: 24px;
     border-bottom: 2px solid #4f46e5;
     padding-bottom: 10px;
+}
+
+/* Box Styles */
+.info-box, .progress-box, .certificate-box {
+    padding: 10px 0;
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    height: 10px;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    background-color: #6366f1;
+    transition: width 0.3s ease;
+}
+
+/* Table Container for Scrollable Table */
+.table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    color: #4f46e5;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
 }
 
 /* Button Styles */
