@@ -1,120 +1,99 @@
 /* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f3f4f6;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
 }
 
-/* Login Container */
 .login-container {
     width: 100%;
-    max-width: 400px;
-    padding: 20px;
+    max-width: 550px;
+    padding: 30px;
     background-color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
     text-align: center;
-    transition: box-shadow 0.3s ease;
 }
 
-/* Hover effect on login container */
-.login-container:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Heading Styles */
-.login-box h2 {
-    margin-bottom: 10px;
-    color: #333;
-    font-size: 24px; /* Increased font size */
-}
-
-/* Paragraph Styles */
-.login-box p {
+.logo-container {
     margin-bottom: 20px;
-    color: #666;
-    font-size: 14px; /* Consistent font size */
 }
 
-/* Input Group */
+.logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color:black;
+    font-size: 1.5em;
+}
+
+/* Input Group Styles */
 .input-group {
-    margin-bottom: 15px;
+    position: relative;
+    margin-bottom: 20px;
 }
 
-/* Label Styles */
-.input-group label {
-    display: block;
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-/* Input Field Styles */
 .input-group input {
     width: 100%;
-    padding: 10px;
+    padding: 12px 45px 12px 15px;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    transition: border-color 0.3s ease;
+    border-radius: 6px;
+    font-size: 1em;
 }
 
-/* Input Field Focus */
-.input-group input:focus {
-    border-color: #6366f1; /* Blue border on focus */
-    outline: none; /* Remove default outline */
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+/* Toggle Password Icon */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
 }
 
 /* Button Styles */
 button {
     width: 100%;
-    padding: 10px;
-    background-color: #6366f1;
+    padding: 12px;
+    background: linear-gradient(135deg, #2196f3, #1e88e5);
     color: white;
+    font-size: 1em;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 16px; /* Increased font size */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    margin-top: 20px;
+    transition: all 0.3s ease;
 }
 
-/* Button Hover Effect */
 button:hover {
-    background-color: #4f46e5;
-    transform: translateY(-2px); /* Slight lift effect */
+    background: linear-gradient(135deg, #1e88e5, #1976d2);
+    transform: translateY(-2px);
 }
 
-/* Media Queries for Responsiveness */
+/* Responsive Design */
 @media (max-width: 480px) {
     .login-container {
-        padding: 15px; /* Less padding on small screens */
-        max-width: 90%; /* Allow the container to use more screen width */
-    }
-    
-    .login-box h2 {
-        font-size: 20px; /* Smaller heading */
-    }
-    
-    button {
-        font-size: 14px; /* Smaller button text */
-    }
-    
-    .input-group input {
-        padding: 8px; /* Less padding on small screens */
-    }
-}
-
-/* Additional Media Queries for Larger Screens */
-@media (min-width: 481px) and (max-width: 768px) {
-    .login-container {
-        padding: 20px; /* Adjust padding for medium screens */
-        max-width: 80%; /* Set max-width to 80% for medium screens */
-    }
-
-    .login-box h2 {
-        font-size: 22px; /* Slightly larger heading for medium screens */
+        padding: 20px;
+        max-width: 90%;
     }
 }

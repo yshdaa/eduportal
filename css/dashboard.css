@@ -3,52 +3,30 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f3f4f6;
     margin: 0;
-    padding: 0;
-    color: #333;
 }
 
 /* Header Styles */
 header {
-    background-color: #4f46e5;
-    padding: 20px;
+    background-color: #6366f1;
+    padding: 15px;
     color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-/* Logout Button Styles */
-#logout-button {
-    padding: 10px 20px;
-    background-color: #f87171;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#logout-button:hover {
-    background-color: #ef4444;
-    transform: translateY(-3px);
-}
-
-#logout-button:active {
-    transform: translateY(0);
+.logo {
+    height: 60px;
 }
 
 /* Main Content Styles */
 main {
     padding: 20px;
-    max-width: 1200px;
-    margin: auto;
 }
 
 /* Section Styles */
@@ -56,37 +34,81 @@ section {
     background-color: white;
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 15px;
+    border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Heading Styles */
 h2 {
     margin-top: 0;
     color: #333;
-    font-size: 24px;
-    border-bottom: 2px solid #4f46e5;
-    padding-bottom: 10px;
 }
 
-/* Box Styles */
-.info-box, .progress-box, .certificate-box {
-    padding: 10px 0;
+/* Student Information Section */
+.info-box {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px 20px;
+    align-items: center;
+}
+
+.info-row {
+    display: contents; /* Ensures grid layout still applies */
+}
+
+.info-box label {
+    font-weight: bold;
+    color: #6366f1;
+    text-align: right;
+    padding-right: 15px;
+    font-size: 16px;
+}
+
+.editable-field {
+    border: 1px solid #ccc;
+    padding: 12px 15px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #f9f9f9, #fff);
+    font-size: 16px;
+    color: #333;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.editable-field:focus {
+    border-color: #6366f1;
+    background: linear-gradient(to bottom, #fff, #f0f0ff);
+    outline: none;
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.6);
+    transform: scale(1.02);
+}
+
+.editable-field::placeholder {
+    color: #bbb;
+    font-style: italic;
+}
+
+.editable-field:hover {
+    border-color: #999;
+    background: linear-gradient(to bottom, #fff, #f7f7f7);
 }
 
 /* Progress Bar Styles */
+.progress-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .progress-bar {
     background-color: #ddd;
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 10px;
     height: 10px;
+    width: 70%; /* Adjust width to create space for the label */
 }
 
 .progress-bar span {
@@ -96,21 +118,16 @@ h2 {
     transition: width 0.3s ease;
 }
 
-/* Table Container for Scrollable Table */
-.table-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-}
-
+/* Table Styles */
 table {
     width: 100%;
     border-collapse: collapse;
-    border-radius: 10px;
-    overflow: hidden;
+    overflow-x: auto; /* Makes the table scrollable */
 }
 
-th, td {
-    padding: 15px;
+th,
+td {
+    padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
@@ -118,7 +135,6 @@ th, td {
 th {
     background-color: #f9f9f9;
     font-weight: bold;
-    color: #4f46e5;
 }
 
 tr:hover {
@@ -127,28 +143,32 @@ tr:hover {
 
 /* Button Styles */
 button {
-    padding: 10px 15px;
+    max-width: 200px;
+    width: 100%;
+    padding: 12px 20px;
     background-color: #4f46e5;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
     background-color: #4338ca;
     transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 button:active {
     transform: translateY(0);
 }
 
-/* Responsive Design */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     main {
-        padding: 15px;
+        padding: 10px;
     }
 
     section {
@@ -163,6 +183,22 @@ button:active {
         width: 100%;
         padding: 12px;
     }
+
+    th,
+    td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .info-box {
+        grid-template-columns: 1fr; /* Stack fields on smaller screens */
+    }
+
+    .info-box label {
+        text-align: left;
+        padding-right: 0;
+        padding-bottom: 5px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -175,12 +211,30 @@ button:active {
         font-size: 18px;
     }
 
-    #logout-button {
-        width: 100%;
-        margin-top: 10px;
+    .info-box {
+        gap: 10px;
     }
 
-    table, th, td {
+    .editable-field {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .info-box label {
+        font-size: 14px;
+    }
+
+    /* Stack form fields and reduce spacing */
+    .student-info, .exam-results, .certificate-box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Table adjustments for small screens */
+    table,
+    th,
+    td {
         font-size: 12px;
         padding: 6px;
     }

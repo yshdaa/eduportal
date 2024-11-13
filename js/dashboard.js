@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     const role = localStorage.getItem('role');
 
-    // Redirect to login if no role is set
     if (!role) {
         alert('You are not logged in!');
         window.location.href = 'index.html';
         return;
     }
 
-    // Simulated student data (could be fetched from an API)
     let studentData = JSON.parse(localStorage.getItem('studentData')) || {
         rollNumber: 'A123456',
         name: 'John Doe',
@@ -21,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
         ]
     };
 
-    // Populate the dashboard with student data
     document.getElementById('roll-number').value = studentData.rollNumber;
     document.getElementById('student-name').value = studentData.name;
     document.getElementById('division').value = studentData.division;
@@ -35,21 +32,19 @@ document.addEventListener('DOMContentLoaded', function () {
         cells[3].children[0].value = subject.percentage;
     });
 
-    // Select elements for editing
     const editButtons = document.querySelectorAll('.edit-button');
     const resultEditButtons = document.querySelectorAll('.result-edit-button');
     const inputFields = document.querySelectorAll('.editable-field');
 
     if (role === 'teacher') {
-        // Enable editing for teachers
-        editButtons.forEach((button, index) => {
-            button.style.display = 'inline-block'; // Show edit buttons for teachers
+        editButtons.forEach(button => {
+            button.style.display = 'inline-block';
             button.addEventListener('click', function () {
-                const input = this.previousElementSibling.querySelector('input');
-                if (input && input.hasAttribute('readonly')) {
+                const input = this.previousElementSibling;
+                if (input.hasAttribute('readonly')) {
                     input.removeAttribute('readonly');
                     this.textContent = 'Save';
-                } else if (input) {
+                } else {
                     input.setAttribute('readonly', true);
                     this.textContent = 'Edit';
                     saveData();
@@ -57,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        resultEditButtons.forEach((button, index) => {
-            button.style.display = 'inline-block'; // Show result edit buttons for teachers
+        resultEditButtons.forEach(button => {
+            button.style.display = 'inline-block';
             button.addEventListener('click', function () {
                 const row = this.closest('tr');
                 const inputs = row.querySelectorAll('input');
@@ -77,9 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!isEditable) saveData();
             });
         });
-
     } else if (role === 'student') {
-        // Disable editing for students (view-only)
         editButtons.forEach(button => button.style.display = 'none');
         resultEditButtons.forEach(button => button.style.display = 'none');
         inputFields.forEach(field => field.setAttribute('readonly', true));
@@ -94,19 +87,19 @@ document.addEventListener('DOMContentLoaded', function () {
         studentData.division = document.getElementById('division').value;
         studentData.mobileNumber = document.getElementById('mobile-number').value;
 
-        const subjectRows = document.querySelectorAll('tbody tr');
-        studentData.subjects.forEach((subject, index) => {
-            const cells = subjectRows[index].children;
-            subject.grade = cells[1].children[0].value;
-            subject.score = cells[2].children[0].value;
-            subject.percentage = cells[3].children[0].value;
+        const rows = document.querySelectorAll('tbody tr');
+        rows.forEach((row, index) => {
+            const inputs = row.querySelectorAll('input');
+            studentData.subjects[index].grade = inputs[0].value;
+            studentData.subjects[index].score = inputs[1].value;
+            studentData.subjects[index].percentage = inputs[2].value;
         });
 
         localStorage.setItem('studentData', JSON.stringify(studentData));
         alert('Data saved successfully!');
     }
 });
+
 function logout() {
-    // Redirect to index.html
     window.location.href = 'index.html';
 }
